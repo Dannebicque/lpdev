@@ -26,4 +26,23 @@ class CategoryController extends AbstractController
             'controller_name' => 'CategoryController',
         ]);
     }
+
+
+    /**
+     * @Route("/category/{libelle}", name="category_libelle")
+     */
+    public function categoryLibelle($libelle): Response
+    {
+        $category = new PostCategory();
+        $category->setTitle($libelle);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($category);
+        $em->flush();
+
+
+        return $this->render('category/index.html.twig', [
+            'controller_name' => 'CategoryController',
+        ]);
+    }
 }
