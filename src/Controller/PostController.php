@@ -29,6 +29,20 @@ class PostController extends AbstractController
     }
 
     /**
+     * @Route("/affiche-all", name="affiche_all")
+     */
+    public function afficheAll(): Response
+    {
+        //récupération du post à l'ID 1
+        $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
+
+
+        return $this->render('post/afficheAll.html.twig', [
+            'posts' => $posts
+        ]);
+    }
+
+    /**
      * @Route("/affiche", name="affiche")
      */
     public function affiche(): Response
