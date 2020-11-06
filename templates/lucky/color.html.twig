@@ -1,0 +1,7 @@
+{% extends 'lucky/date.html.twig' %}
+
+{% block toto %}
+<h1> La couleur est <span style="background-color: {{ color }}">{{ color }}</span></h1>
+
+<a href="{{ path('lucky_date') }}">Date</a>
+{% endblock %}

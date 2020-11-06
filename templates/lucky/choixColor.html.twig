@@ -1,0 +1,11 @@
+{% extends 'lucky/date.html.twig' %}
+
+{% block body %}
+    {% for couleur in tabCouleur %}
+        <a href="{{ path('lucky_couleur', {color:couleur}) }}">{{ couleur }}</a><br>
+    {% endfor %}
+
+
+{% endblock %}
+
+

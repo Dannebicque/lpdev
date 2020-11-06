@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<a href="{{ path('lucky_couleur', {color:'blue'}) }}">Bleu</a>
+
+<a href="{{ path('lucky_couleur', {color:'red'}) }}">Rouge</a>
+    {% block toto %}
+    {% endblock %}
+{% endblock %}
