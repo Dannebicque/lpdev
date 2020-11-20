@@ -38,6 +38,11 @@ class Post
      */
     private $enable = false;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=PostCategory::class, inversedBy="posts")
+     */
+    private $category;
+
 
     public function __construct()
     {
@@ -93,6 +98,18 @@ class Post
     public function setEnable(bool $enable): self
     {
         $this->enable = $enable;
+
+        return $this;
+    }
+
+    public function getCategory(): ?PostCategory
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?PostCategory $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

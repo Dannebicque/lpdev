@@ -35,10 +35,12 @@ class PostController extends AbstractController
     {
         //récupération du post à l'ID 1
         $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
+        $categories = $this->getDoctrine()->getRepository(PostCategory::class)->findAll();
 
 
         return $this->render('post/afficheAll.html.twig', [
-            'posts' => $posts
+            'posts' => $posts,
+            'categories' => $categories
         ]);
     }
 
