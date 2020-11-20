@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul>
+    {% for category in categories %}
+        <li>{{ category.title }} ({{ category.posts|length }} messages)</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
