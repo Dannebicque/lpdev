@@ -15,9 +15,12 @@ class PostController extends AbstractController
      */
     public function index(): Response
     {
+        $postCategory = $this->getDoctrine()->getRepository(PostCategory::class)->find(1);
+
         $post = new Post();
-        $post->setTitle('Post 1');
+        $post->setTitle('Post 3');
         $post->setContent('Loreum ipsum...');
+        $post->setCategory($postCategory); //affecte une catégorieà mon post
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($post);
